@@ -1,0 +1,35 @@
+:root{ --accent:#6f62ff; --dark:#1c1b22; --muted:#666; }
+*{ box-sizing:border-box }
+body{ margin:0; font-family:system-ui, Arial, sans-serif; color:var(--dark); }
+main{ min-height:70vh }
+
+.nav{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 16px; border-bottom:1px solid #eee; }
+.nav .brand{ font-weight:700; cursor:pointer }
+.nav a{ margin:0 8px; text-decoration:none; color:var(--dark) }
+.nav input{ padding:6px 10px; border:1px solid #ddd; border-radius:6px }
+
+.hero{ text-align:center; padding:48px 16px; background:linear-gradient(180deg,#faf8ff,#fff); }
+.hero .logo{ width:120px; height:auto; margin-bottom:16px }
+.hero .cta{ display:inline-block; margin-top:16px; padding:10px 16px; background:var(--accent); color:white; border-radius:8px; text-decoration:none }
+.copy{ max-width:760px; margin:0 auto; color:var(--muted) }
+
+.container{ max-width:1000px; margin:20px auto; padding:0 16px }
+.filters{ display:flex; gap:10px; margin-bottom:16px }
+.filters input, .filters select, .checkout input, .checkout textarea{ padding:10px; border:1px solid #ddd; border-radius:8px }
+.grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px }
+
+.card{ border:1px solid #eee; border-radius:12px; overflow:hidden; display:flex; flex-direction:column }
+.card img{ width:100%; aspect-ratio:1/1; object-fit:cover; background:#fafafa }
+.card-body{ padding:12px }
+.price{ color:var(--accent); font-weight:700 }
+.short{ color:var(--muted) }
+
+.product{ display:grid; grid-template-columns: 1fr 1fr; gap:24px }
+.product img{ width:100%; border:1px solid #eee; border-radius:12px }
+.product button, .cart-row button, .checkout button{ padding:8px 12px; border:none; background:var(--accent); color:white; border-radius:8px; cursor:pointer }
+
+.cart-row{ display:grid; grid-template-columns: 2fr 1fr 1fr 1fr auto; align-items:center; gap:10px; padding:10px 0; border-bottom:1px solid #f0f0f0 }
+.cart-row .qty{ display:inline-block; width:28px; text-align:center }
+
+.footer{ padding:20px 16px; border-top:1px solid #eee; text-align:center; color:var(--muted) }
+.ok{ color:green }

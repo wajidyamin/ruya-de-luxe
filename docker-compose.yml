@@ -1,0 +1,35 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: ruyadeluxe
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+
+  server:
+    build: ./server
+    restart: always
+    environment:
+      PORT: 5000
+      MONGO_URI: mongodb://mongo:27017/ruyadeluxe
+      CORS_ORIGIN: "*"
+      ADMIN_TOKEN: "changeme-admin-token"
+      BRAND_NAME: "Ruya_de_Luxe"
+    depends_on:
+      - mongo
+    ports:
+      - "5001:5000"
+
+  client:
+    build: ./client
+    restart: always
+    depends_on:
+      - server
+    ports:
+      - "8080:80"
+
+volumes:
+  mongo_data:
