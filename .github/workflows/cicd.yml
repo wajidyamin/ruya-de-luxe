@@ -1,0 +1,16 @@
+name: Deploy it on two different machines
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  remote_deploy:
+    runs-on: [self-hosted, remote]
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          docker compose down || true
+          docker compose build
+          docker compose up -d
