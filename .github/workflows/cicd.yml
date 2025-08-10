@@ -7,7 +7,7 @@ on:
 
 jobs:
   remote_deploy:
-    runs-on: [self-hosted, local, laptop]
+    runs-on: [self-hosted, local]
     steps:
       - uses: actions/checkout@v4
       - run: |
